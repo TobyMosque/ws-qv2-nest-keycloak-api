@@ -79,6 +79,25 @@ export interface Company {
 /**
  * 
  * @export
+ * @interface CompanyQueryResponseDto
+ */
+export interface CompanyQueryResponseDto {
+    /**
+     * 
+     * @type {Array<Company>}
+     * @memberof CompanyQueryResponseDto
+     */
+    'data': Array<Company>;
+    /**
+     * 
+     * @type {number}
+     * @memberof CompanyQueryResponseDto
+     */
+    'count'?: number;
+}
+/**
+ * 
+ * @export
  * @interface ConnectCompanyDto
  */
 export interface ConnectCompanyDto {
@@ -324,6 +343,25 @@ export interface Job {
 /**
  * 
  * @export
+ * @interface JobQueryResponseDto
+ */
+export interface JobQueryResponseDto {
+    /**
+     * 
+     * @type {Array<Job>}
+     * @memberof JobQueryResponseDto
+     */
+    'data': Array<Job>;
+    /**
+     * 
+     * @type {number}
+     * @memberof JobQueryResponseDto
+     */
+    'count'?: number;
+}
+/**
+ * 
+ * @export
  * @interface Person
  */
 export interface Person {
@@ -411,6 +449,25 @@ export interface Person {
      * @memberof Person
      */
     'revision': string;
+}
+/**
+ * 
+ * @export
+ * @interface PersonQueryResponseDto
+ */
+export interface PersonQueryResponseDto {
+    /**
+     * 
+     * @type {Array<Person>}
+     * @memberof PersonQueryResponseDto
+     */
+    'data': Array<Person>;
+    /**
+     * 
+     * @type {number}
+     * @memberof PersonQueryResponseDto
+     */
+    'count'?: number;
 }
 /**
  * 
@@ -1009,7 +1066,7 @@ export const CompanyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CompanyQueryResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.query(take, skip, where, cursor, orderBy, select, include, count, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1078,7 +1135,7 @@ export const CompanyApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: any): AxiosPromise<void> {
+        query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: any): AxiosPromise<CompanyQueryResponseDto> {
             return localVarFp.query(take, skip, where, cursor, orderBy, select, include, count, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1462,7 +1519,7 @@ export const JobApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<JobQueryResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.query(take, skip, where, cursor, orderBy, select, include, count, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1531,7 +1588,7 @@ export const JobApiFactory = function (configuration?: Configuration, basePath?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: any): AxiosPromise<void> {
+        query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: any): AxiosPromise<JobQueryResponseDto> {
             return localVarFp.query(take, skip, where, cursor, orderBy, select, include, count, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1915,7 +1972,7 @@ export const PersonApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PersonQueryResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.query(take, skip, where, cursor, orderBy, select, include, count, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1984,7 +2041,7 @@ export const PersonApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: any): AxiosPromise<void> {
+        query(take?: number, skip?: number, where?: any, cursor?: any, orderBy?: any, select?: any, include?: any, count?: boolean, options?: any): AxiosPromise<PersonQueryResponseDto> {
             return localVarFp.query(take, skip, where, cursor, orderBy, select, include, count, options).then((request) => request(axios, basePath));
         },
         /**
