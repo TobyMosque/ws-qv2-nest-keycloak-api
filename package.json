@@ -1,6 +1,6 @@
 {
   "name": "api",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "OpenAPI client for api",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
@@ -23,5 +23,6 @@
   "devDependencies": {
     "@types/node": "^12.11.5",
     "typescript": "^3.6.4"
-  }
+  },
+  "type": "module"
 }
